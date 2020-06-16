@@ -303,7 +303,10 @@ paths:
         definition: '@shot_root/work/maya/snapshots/{name}.v{version}.{timestamp}.{maya_extension}'
     # The location of published maya files
     maya_shot_publish:
-        definition: '@shot_root/publish/maya/{name}.v{version}.{maya_extension}'
+        definition: '@shot_root/publish/maya/{name}.v{version}.{maya_extension}'        
+    # The location of published cache files
+    maya_shot_publish:
+        definition: '@shot_root/publish/maya/{name}.v{version}.abc'        
 
 
     #
