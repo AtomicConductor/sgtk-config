@@ -69,10 +69,9 @@ engines.tk-mari.location:
 # Maya
 engines.tk-maya.location:
   type: git_branch
-  branch: customized_maya_engine
-  path: git@github.com:AtomicConductor/sgtk-config.git
-  name: tk-maya
-  version: v0.11.0
+  branch: improve_dependency_scanning
+  path: https://github.com/AtomicConductor/tk-maya.git
+  version: HEAD
 
 # Motion Builder
 engines.tk-motionbuilder.location:
