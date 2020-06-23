@@ -166,6 +166,11 @@ keys:
         type: sequence
         format_spec: "05"
         alias: SEQ
+        
+    current_user_name:
+        type: str
+        shotgun_entity_type: HumanUser
+        shotgun_field_name: login        
 
 
 #
@@ -188,6 +193,9 @@ paths:
     shot_root: sequences/{Sequence}/{Shot}/{Step}
     asset_root: assets/{sg_asset_type}/{Asset}/{Step}
     sequence_root: sequences/{Sequence}
+    work_shot_root: work/{current_user_name}/{Sequence}_{Shot}_{Step}_{task_name}
+    work_sequence_root: work/{current_user_name}/{Sequence}_{Step}_{task_name}
+    work_shot_root: work/{current_user_name}/{sg_asset_type}_{Asset}_{Step}_{task_name}
 
 
     ##########################################################################################
@@ -291,16 +299,16 @@ paths:
 
     # define the location of a work area
     shot_work_area_maya:
-        definition: '@shot_root/work/maya'
+        definition: '@work_shot_root/maya'
     # define the location of a publish area
     shot_publish_area_maya:
         definition: '@shot_root/publish/maya'
     # The location of WIP files
     maya_shot_work:
-        definition: '@shot_root/work/maya/{name}.v{version}.{maya_extension}'
+        definition: '@work_shot_root/maya/scenes/{name}.v{version}.{maya_extension}'
     # The location of backups of WIP files
     maya_shot_snapshot:
-        definition: '@shot_root/work/maya/snapshots/{name}.v{version}.{timestamp}.{maya_extension}'
+        definition: '@work_shot_root/maya/scenes/snapshots/{name}.v{version}.{timestamp}.{maya_extension}'
     # The location of published maya files
     maya_shot_publish:
         definition: '@shot_root/publish/maya/{name}.v{version}.{maya_extension}'
