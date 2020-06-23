@@ -68,8 +68,9 @@ engines.tk-mari.location:
 
 # Maya
 engines.tk-maya.location:
-  type: path
-  path: /home/jlehrman/workspace/tk-maya
+  type: git_branch
+  branch: customized_maya_engine
+  path: git@github.com:AtomicConductor/sgtk-config.git
   name: tk-maya
   version: v0.11.0
 
